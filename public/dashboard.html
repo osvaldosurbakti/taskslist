@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dashboard</title>
+  <link rel="stylesheet" href="./css/style.css">
+</head>
+<body>
+  <h1>Welcome to Dashboard</h1>
+  
+  <div style="margin-bottom: 20px;">
+    <button onclick="logout()">Logout</button>
+  </div>
+  
+  <!-- Form untuk Tambah Task -->
+  <div>
+    <h2>Create Task</h2>
+    <input type="text" id="title" placeholder="Task Title" required>
+    <input type="text" id="description" placeholder="Task Description">
+    <input type="file" id="image" accept="image/*">
+    <button onclick="createTask()">Create Task</button>
+  </div>
+
+  <!-- Daftar Task -->
+  <div>
+    <h2>Task List</h2>
+    <div id="tasks-list"></div>
+  </div>
+
+  <!-- Form untuk Edit Task -->
+  <div id="edit-form" style="display: none;">
+    <h2>Edit Task</h2>
+    <input type="hidden" id="edit-task-id">
+    <input type="text" id="edit-title" placeholder="Task Title" required>
+    <input type="text" id="edit-description" placeholder="Task Description">
+    <input type="file" id="edit-image" accept="image/*">
+    <div>
+      <img id="edit-image-preview" style="max-width: 200px; max-height: 200px;" alt="Current Image" />
+    </div>
+    <button onclick="submitEdit()">Update Task</button>
+    <button onclick="closeEditForm()">Cancel</button>
+  </div>
+
+  <!-- Memanggil Script -->
+  <script src="./js/taskFunctions.js"></script>
+  <script src="./js/authFunctions.js"></script>
+</body>
+</html>
